@@ -87,7 +87,7 @@ function Projects() {
       <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-14">
         <header className="mb-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-sm uppercase tracking-[0.4em] text-amber-300/80">Engagement Studio</p>
+            <p className="text-sm uppercase tracking-[0.4em] text-amber-300/80">Spectra</p>
             <h1 className="mt-3 text-4xl font-semibold text-slate-50 md:text-5xl">Projects</h1>
             <p className="mt-3 max-w-2xl text-base text-slate-300 md:text-lg">
               Track your active apps, jump into insights, and keep your keys secure.

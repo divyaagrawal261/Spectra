@@ -1,4 +1,4 @@
-function AuthLayout({ title, description, eyebrow = 'Engagement Studio', children }) {
+function AuthLayout({ title, description, eyebrow = 'Spectra', children }) {
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
       <div className="pointer-events-none absolute inset-0">
