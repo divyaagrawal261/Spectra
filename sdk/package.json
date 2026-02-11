@@ -1,0 +1,27 @@
+{
+  "name": "engagement-tracker-sdk",
+  "version": "1.0.0",
+  "description": "User engagement tracking SDK",
+  "main": "dist/engage.min.js",
+  "type": "module",
+  "module": "dist/engage.esm.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "engagement",
+    "tracking",
+    "analytics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-terser": "^0.4.0",
+    "rollup": "^4.57.1",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
