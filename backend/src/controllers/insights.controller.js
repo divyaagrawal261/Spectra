@@ -122,15 +122,29 @@ export const eventByPage = async (req, res) => {
   }
 
   const data = await Event.aggregate([
+    { $match: match },
+
+    // Extract pathname from full URL
     {
-      $match: match
+      $addFields: {
+        pathname: {
+          $arrayElemAt: [
+            { $split: ["$page", "/"] },
+            3
+          ]
+        }
+      }
     },
+
     {
       $group: {
-        _id: "$page",
+        _id: {
+          $concat: ["/", "$pathname"]
+        },
         count: { $sum: 1 }
       }
     },
+
     { $sort: { count: -1 } }
   ]);
 
