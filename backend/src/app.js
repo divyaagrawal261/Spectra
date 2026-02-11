@@ -14,9 +14,9 @@ import eventsRoutes from "./routes/events.js";
 const app = express();
 
 app.use(cors({
-  origin: ["http://localhost:3000","http://localhost:5173", "http://localhost:3001", "http://127.0.0.1:5500"],
-  credentials: true
+  origin: "*"
 }));
+
 app.use(express.json());
 
 app.use("/api/collect", collectRoutes);
