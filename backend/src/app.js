@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import cron from "node-cron";
 dotenv.config();
 
 import collectRoutes from "./routes/collect.routes.js";
@@ -29,6 +30,18 @@ app.use("/api/events", eventsRoutes);
 
 app.get("/health", (_, res) => {
   res.json({ status: "ok" });
+});
+
+const BASE_URL = process.env.BASE_URL || "http://localhost:5000";
+
+cron.schedule("*/10 * * * *", async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/health`);
+    const data = await response.json();
+    console.log("Health check:", data);
+  } catch (error) {
+    console.error("Health check failed:", error.message);
+  }
 });
 
 export default app;
