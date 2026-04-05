@@ -7,5 +7,7 @@ export const defaultConfig = {
     scroll: false
   },
   batchSize: 10,
-  flushInterval: 5000
+  flushInterval: 5000,
+  eventConfigUrl: null,
+  events: []
 };

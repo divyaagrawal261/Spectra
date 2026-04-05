@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "selector": ".cta-button",
+      "on": "click",
+      "name": "cta_clicked",
+      "metadata": {
+        "button": "get_started"
+      }
+    },
+    {
+      "selector": ".cta-button2",
+      "on": "hover",
+      "name": "cta_hovered",
+      "metadata": {
+        "button": "get_started"
+      }
+    }
+  ]
+}

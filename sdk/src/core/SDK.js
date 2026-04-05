@@ -5,6 +5,7 @@ import { sendEvents } from "./transport";
 import { trackClicks } from "../trackers/click";
 import { trackHover } from "../trackers/hover";
 import { trackScroll } from "../trackers/scroll";
+import { initDeclarativeTracking } from "../trackers/declarative";
 
 export class EngageSDK {
   constructor() {
@@ -46,5 +47,7 @@ export class EngageSDK {
     if (autoTrack.click) trackClicks(this);
     if (autoTrack.hover) trackHover(this);
     if (autoTrack.scroll) trackScroll(this);
+
+    initDeclarativeTracking(this);
   }
 }

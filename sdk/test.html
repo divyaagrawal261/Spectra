@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,9 +82,17 @@
             cursor: pointer;
         }
 
-        .feature-card:nth-child(1) { animation-delay: 0.4s; }
-        .feature-card:nth-child(2) { animation-delay: 0.5s; }
-        .feature-card:nth-child(3) { animation-delay: 0.6s; }
+        .feature-card:nth-child(1) {
+            animation-delay: 0.4s;
+        }
+
+        .feature-card:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .feature-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
 
         .feature-card:hover {
             transform: translateY(-10px);
@@ -184,6 +192,7 @@
                 opacity: 0;
                 transform: translateY(-30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -195,6 +204,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -205,6 +215,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -215,9 +226,12 @@
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.05);
             }
@@ -239,6 +253,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -249,12 +264,12 @@
         <div class="hero">
             <h2>Transform Your User Insights</h2>
             <p>
-                Discover how your users interact with your application in real-time. 
-                EngageTrack provides powerful analytics to help you understand user behavior, 
+                Discover how your users interact with your application in real-time.
+                EngageTrack provides powerful analytics to help you understand user behavior,
                 optimize engagement, and drive growth with actionable insights.
             </p>
             <p>
-                Our lightweight SDK seamlessly integrates into your application, 
+                Our lightweight SDK seamlessly integrates into your application,
                 tracking clicks, hovers, scrolls, and custom events without impacting performance.
             </p>
         </div>
@@ -264,7 +279,7 @@
                 <div class="feature-icon">📊</div>
                 <h3>Real-Time Analytics</h3>
                 <p>
-                    Monitor user interactions as they happen with our real-time tracking engine. 
+                    Monitor user interactions as they happen with our real-time tracking engine.
                     Get instant insights into how users engage with your content.
                 </p>
             </div>
@@ -273,7 +288,7 @@
                 <div class="feature-icon">⚡</div>
                 <h3>Lightning Fast</h3>
                 <p>
-                    Our optimized SDK adds less than 10KB to your bundle and uses intelligent 
+                    Our optimized SDK adds less than 10KB to your bundle and uses intelligent
                     batching to minimize network overhead and maximize performance.
                 </p>
             </div>
@@ -282,7 +297,7 @@
                 <div class="feature-icon">🎯</div>
                 <h3>Custom Events</h3>
                 <p>
-                    Track custom events that matter to your business. From button clicks to 
+                    Track custom events that matter to your business. From button clicks to
                     form submissions, capture every meaningful interaction.
                 </p>
             </div>
@@ -304,7 +319,10 @@
         </div>
 
         <div class="cta-section">
-            <button class="cta-button pulse" onclick="trackCustomEvent()">
+            <button class="cta-button pulse">
+                Get Started Now
+            </button>
+            <button class="cta-button2 pulse">
                 Get Started Now
             </button>
         </div>
@@ -320,23 +338,16 @@
         EngageTrack.init({
             apiUrl: "http://localhost:5000",
             apiKey: "c32cb427-75bc-426a-9f7c-b57a2b1b447a",
-            autoTrack: { click: true, scroll: true, hover: true },
+            autoTrack: { click: false, scroll: false, hover: false },
+            eventConfigUrl: "./events.json"
         });
-    
+
         // Track page load
         EngageTrack.track("page_loaded", {
             page: "landing",
             timestamp: new Date().toISOString()
         });
-        
-        // Track custom event on CTA button
-        function trackCustomEvent() {
-            EngageTrack.track("cta_clicked", {
-                button: "get_started",
-                timestamp: new Date().toISOString()
-            });
-            alert("🎉 Event tracked! Check your analytics dashboard.");
-        }
+
 
         // Track scroll depth
         let maxScroll = 0;
@@ -354,4 +365,5 @@
         });
     </script>
 </body>
+
 </html>
